@@ -44,7 +44,7 @@ namespace Api.GateWay
                     logging.AddEventLog();//启用系统事件日志，
                 })
                 ;
-
+            //使用docker发布的时候注释掉topshelf
             //builder.Build().Run();
             HostFactory.Run(x =>
             {
