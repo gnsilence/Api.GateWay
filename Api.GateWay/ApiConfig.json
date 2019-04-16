@@ -1,0 +1,45 @@
+{
+  "Config": {
+    /*接口端口*/
+    "ApiServerPort": 8800,
+    /*网关端口*/
+    "GateWayPort": 9090,
+    /*开启限流*/
+    "IsLimit": true,
+    /*redis地址*/
+    "RedisServer": "127.0.0.1:6379,poolsize=400,idleTimeout=50000,preheat=false,defaultDatabase=5",
+    /*转发的服务地址*/
+    "ServerList": [
+      {
+        /*Uri地址ip+端口*/
+        "Host": "http://localhost:9088",
+        /*权重(0-10,0表示不参与负载)*/
+        "Weight": 9,
+        /*匹配正则*/
+        "UrlPrex": "*",
+        /*最大连接数*/
+        "MaxConnections": 1000,
+        /*每秒最大请求数*/
+        "MaxRps": 1000,
+        /*Hash一致性负载*/
+        "HashPattern": null /* */
+      },
+      {
+        "Host": "http://localhost:9098",
+        "Weight": 10,
+        "UrlPrex": "*",
+        "MaxConnections": 1000,
+        "MaxRps": 1000,
+        "HashPattern": null
+      },
+      {
+        "Host": "http://localhost:53583",
+        "Weight": 10,
+        "UrlPrex": "*",
+        "MaxConnections": 1000,
+        "MaxRps": 1000,
+        "HashPattern": null
+      }
+    ]
+  }
+}
