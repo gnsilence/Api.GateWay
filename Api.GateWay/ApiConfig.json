@@ -1,13 +1,11 @@
 {
   "Config": {
-    /*接口端口*/
-    "ApiServerPort": 8800,
     /*网关端口*/
     "GateWayPort": 9090,
     /*开启限流*/
     "IsLimit": true,
     /*redis地址*/
-    "RedisServer": "127.0.0.1:6379,poolsize=400,idleTimeout=50000,preheat=false,defaultDatabase=5",
+    "RedisServer": "127.0.0.1:6379,poolsize=300,idleTimeout=50000,preheat=false,defaultDatabase=5",
     /*转发的服务地址*/
     "ServerList": [
       {
