@@ -3,7 +3,7 @@
     /*网关端口*/
     "GateWayPort": 9090,
     /*开启限流*/
-    "IsLimit": true,
+    "IsLimit": false,
     /*redis地址*/
     "RedisServer": "127.0.0.1:6379,defaultDatabase=5",
     /*转发的服务地址*/

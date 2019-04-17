@@ -170,12 +170,14 @@ namespace Api.GateWay.Filter
     /// </summary>
     public class Requested : IRequestedHandler
     {
+        private static Logger logger = new LogFactory().GetCurrentClassLogger();
         public string Name => "Requested";
 
         public string Description => "Requested filter";
 
         public void Execute(EventRequestCompletedArgs e)
         {
+            logger.Info($"请求时长：{e.Time} ms");
             Console.WriteLine($"请求时长：{e.Time} ms");
         }
 
@@ -204,7 +206,7 @@ namespace Api.GateWay.Filter
                 Console.WriteLine($"错误码：{e.ErrorCode}");
                 e.Result = new BadMessage("访问出错,所访问的地址不可用");
             }
-            
+            e.Result = new BadMessage("访问出错");
         }
 
         public void Init(Gateway gateway, Assembly assembly)
